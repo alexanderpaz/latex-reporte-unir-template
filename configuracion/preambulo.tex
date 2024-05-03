@@ -1,0 +1,84 @@
+\documentclass[11pt, a4paper, oneside]{article}
+
+% IDIOMA Y CODIFICACIÓN DE DOCUMENTOS 
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+
+
+% CONFIGURACIÓN DEL DISEÑO DE HOJA
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+
+
+% ESPACIO INTERLINEADO Y ENTRE PÁRRAFOS
+\usepackage{setspace}
+\linespread{1.5}
+\setlength{\parskip}{1em}
+
+
+% PARA GENERAR TEXTO ALEATORIO
+\usepackage{lipsum}
+
+
+% SETEO DE TIPOGRAFÍA
+\usepackage{inconsolata}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% BIBLIOGRAFÍA
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{referencias/referencias.bib}
+\usepackage{csquotes}
+
+
+% TO-DO NOTES
+\usepackage{todonotes} %[disable]
+\newcommand{\todocorregir}[2][]{\todo[color=red!70, #1]{#2}}
+\newcommand{\todoverificar}[2][]{\todo[color=orange, #1]{#2}}
+\newcommand{\todoidea}[2][]{\todo[color=green!20, #1]{#2}}
+% uso:
+%\todototoc{Esto se va directo a la lista de todos}
+%\todocorregir[color=green!40]{Esto está mal}
+%\missingfigure{Para recordar que hay que insertar una figura}
+
+
+% DEFINICIÓN DE COLORES PERSONALIZADOS
+\usepackage{xcolor}
+\definecolor{colorunir}{rgb}{0,152,205}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codeback}{RGB}{252,252,252}
+\definecolor{codeborder}{RGB}{240,240,240}
+
+
+% LISTADOS DE CÓDIGO
+\usepackage{listingsutf8}
+\usepackage{url}
+\lstdefinestyle{reporte-style}{
+	keywordstyle=\bfseries\ttfamily\color{codepurple},
+	commentstyle=\color{codegray}\textit,
+	stringstyle=\color{codegreen},
+	backgroundcolor=\color{codeback},
+	captionpos=b, 
+	basicstyle=\ttfamily\footnotesize,
+	frame={single},
+	rulecolor=\color{codeborder},
+	framesep=5px,
+	breaklines=true,
+	inputencoding=utf8,
+	extendedchars=true,
+	numbers=left,
+	numbersep=1.5em,
+	numberstyle=\ttfamily\small\color{codegray},
+	title=\lstname
+}
+\input{configuracion/config-lst-utf.tex}
+\lstset{style=reporte-style}
+
+
+% CONFIGURACIÓN DE CAPTIONS
+\usepackage{caption}
+\captionsetup[figure]{name=Figura, labelsep=period} % Cambia el nombre a las figuras
+\renewcommand\lstlistingname{Listado}
+\renewcommand\lstlistoflistings{\textbf{{\Large Índice de listados}}}

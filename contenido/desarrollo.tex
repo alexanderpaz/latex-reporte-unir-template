@@ -1,0 +1,13 @@
+\section{Éste es el desarrollo del reporte}
+
+\lipsum{2}
+
+Esto es una prueba de cita bibliográfica \parencite{Ley28518}.
+
+\begin{lstlisting}[caption={Código en Python para detectar duplicados}, language=python]
+# Código para limpiar datos
+url = "https://raw.githubusercontent.com/InnocenceAllen/AENA_Info_Vuelos/master/infovuelos_sample.csv"
+data = pd.read_csv(url, sep=';')
+duplicates = data[data.duplicated()]
+print(duplicates)
+\end{lstlisting}

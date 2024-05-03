@@ -1,0 +1,75 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                  %%
+%%		DOCUMENTO PRINCIPAL		    %%
+%%								    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\curso{Bases de Datos para el BigData}
+\def\titulotrabajo{Actividad 1}
+\def\nombreautor{Br. Alexander Paz Ocampo}
+\def\docente{Dr. Marlon Cárdenas Bonett}
+\def\fecha{4 de Mayo del 2024}
+\def\lugar{Lima}
+% no modificar---------
+\title{\titulotrabajo}
+\author{\nombreautor}
+% ---------------------
+
+\include{configuracion/preambulo.tex}
+% TODO: Comentar para generar el documento completo
+%\includeonly{contenido/introduccion}
+
+
+
+\begin{document}
+
+	\listoftodos
+	% CARATULA
+	\input{contenido/caratula.tex}
+	\newpage
+	
+	% PARTE PRELIMINAR Y TABLAS DE CONTENIDO
+	\tableofcontents
+	\thispagestyle{empty}  % No muestra el número de página
+	\newpage
+	
+	% Numeración romana
+	\pagenumbering{roman} % Cambia la numeración a números romanos
+	\pagestyle{plain}
+		
+	% Índice de listados
+	\phantomsection
+	\addcontentsline{toc}{section}{Índice de Listados}
+	\lstlistoflistings
+	\newpage
+	
+	% Listado de tablas
+	\phantomsection
+	\addcontentsline{toc}{section}{Índice de Tablas}
+	\listoftables
+	\newpage
+	
+	% Índice de figuras
+	\phantomsection
+	\addcontentsline{toc}{section}{Índice de Figuras}
+	\listoffigures
+	\newpage
+	
+	% Reinicia el contador de página después de la tabla de contenidos
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	
+	% Contenido del informe
+
+	\include{contenido/desarrollo.tex}
+	
+	% REFERENCIAS
+	% TODO: incluir lista de referencias
+	%\include{contenido/refbiblio.tex}
+	\printbibliography[heading=bibintoc, title={Referencias}]
+	
+	% APÉNDICES
+	\appendix
+	\include{contenido/apendice1}
+	
+\end{document}
